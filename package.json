@@ -14,7 +14,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3"
   },
-  "browserlist": {
+  "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
