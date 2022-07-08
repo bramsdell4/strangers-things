@@ -1,0 +1,20 @@
+nav {
+    margin-bottom: 1rem;
+    align-items: center;
+    border: 2px solid black;
+    padding:15px;
+}
+
+.navlink {
+    margin-right: 2rem;
+    color: blue;
+    
+
+}
+
+.navlink.active {
+    color: white;
+    background-color: black;
+    border: 10px solid black;
+    border-bottom-left-radius: 75%;
+}
