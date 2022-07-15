@@ -1,8 +1,10 @@
 import React , {useState} from "react";
 import { NavLink, Route} from "react-router-dom";
+import Posts from "./Posts";
+import Account from "./Account"
 
 const App = () => {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
     const [token, setToken] = useState('')
     const [user, setUser] = useState(false)
     const [username, setUsername] = useState('')
@@ -14,22 +16,24 @@ const App = () => {
     return <main>
         <nav>
         <NavLink exact to="/" className="navlink" activeClassName="active">
-            Home
+            Home 
             </NavLink>
         <NavLink to="/posts" className="navlink" activeClassName="active">
-            Posts
+            Posts 
             </NavLink>
-        <NavLink to="/login" className="navlink" activeClassName="active">
-            Login
+        <NavLink to="/account" className="navlink" activeClassName="active">
+            Log In/Register
             </NavLink>
-        <NavLink to="/register" className="navlink" activeClassName="active">
-            Register
-            </NavLink>
+
         </nav>
         <Route exact path="/"><div>hello</div></Route>
-        <Route path="/posts"><div>posts</div></Route>
-        <Route path="/login"><div>Login</div></Route>
-        <Route path="/register"><div>register</div></Route>
+        <Route path="/posts">
+            <Posts posts={posts} setPosts={setPosts}/>
+        </Route>
+        <Route path="/account">
+            <Account />
+            </Route>
+        
         <Route path="/logout"><div>logout</div></Route>
 
     </main>

@@ -36,3 +36,12 @@ export const apiCall = async (url, method='GET', token, body) => {
       Object.assign(body, {'Authorization': `Bearer ${token}` }) :
       body;
   }
+
+
+export const fetchPosts = async () => {
+  const data = await apiCall('/posts')
+  if (!data || !data.data) {
+    return []
+  }
+  return data.data.posts || [];
+}
