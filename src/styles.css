@@ -18,3 +18,15 @@ nav {
     border: 10px solid black;
     border-bottom-left-radius: 75%;
 }
+
+.post{
+    list-style: none;
+    padding: 3px;
+    margin: 5px;
+    background-color: grey;
+    border: 2px solid black;
+}
+
+.post.hover{
+    background-color: blue;
+}

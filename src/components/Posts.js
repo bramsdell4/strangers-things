@@ -12,6 +12,7 @@ fetch(strangerThingsAPI_URL)
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const [featuredPost, setFeaturedPost] = useState('')
   //const [search, setSearch] = useState('');
   useEffect(() => {
     const apiCall = async () => {
@@ -22,23 +23,25 @@ const Posts = () => {
     }
     apiCall()
    
-  }
-
+  },
+[]
   )
 
 
-  return <>
-    <h1>Posts</h1>
-    {
-      posts.map(post => <div key={post.id}>
-        <h2>{post.title}</h2>
-        <p>{post.description}</p>
-      </div>)
+  return <><div>
+  <h1>Posts</h1>
+  <ul>
+  {
+    posts.map(post => <li className="post" key={post._id}>
+      <h2>{post.title}</h2>
+      <p>{post.description}</p>
+      </li>
+    )
+  }
+</ul>
+</div>
+</>
 
-    }
-
-
-  </>
 
 
 }

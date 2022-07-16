@@ -1,7 +1,8 @@
 import React , {useState} from "react";
 import { NavLink, Route} from "react-router-dom";
 import Posts from "./Posts";
-import Account from "./Account"
+import Account from "./Account";
+import Home from "./Home";
 
 const App = () => {
     const [posts, setPosts] = useState([]);
@@ -26,7 +27,9 @@ const App = () => {
             </NavLink>
 
         </nav>
-        <Route exact path="/"><div>hello</div></Route>
+        <Route exact path="/">
+            <Home posts={posts} setPosts={setPosts}/>
+        </Route>
         <Route path="/posts">
             <Posts posts={posts} setPosts={setPosts} user={user} token={token} featuredPost={featuredPost} setFeaturedPost={setFeaturedPost}/>
         </Route>
