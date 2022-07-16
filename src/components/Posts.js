@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 //import {fetchPosts} from "../utility/api";
 
-const strangerThingsAPI_URL = 'https://strangers-things.herokuapp.com/api/2204-FTB-MT-WEB-PT/posts'
+
+//look up promises
 /*
 fetch(strangerThingsAPI_URL)
 .then(response => response.json())
@@ -9,20 +10,25 @@ fetch(strangerThingsAPI_URL)
 */
 
 
-const Posts = ({posts, setPosts}) => {
+const Posts = () => {
+  const [posts, setPosts] = useState([]);
+  //const [search, setSearch] = useState('');
+  useEffect(() => {
+    const apiCall = async () => {
+      const result = await fetch('https://strangers-things.herokuapp.com/api/2204-FTB-MT-WEB-PT/posts');
+      const data = await result.json();
+      setPosts(data.data.posts)
+     console.log(data)
+    }
+    apiCall()
+   
+  }
 
-    //const [search, setSearch] = useState('');
-    useEffect(() => {
-      const fetchPosts = async () => {
-        const response = await fetch(strangerThingsAPI_URL);
-        const data = await response.json();
-       console.log('data: ', data);
-       setPosts(data);
-      }
-      fetchPosts();
-    }, []);
-    return <>
-    <h1>Posts</h1> 
+  )
+
+
+  return <>
+    <h1>Posts</h1>
     {
       posts.map(post => <div key={post.id}>
         <h2>{post.title}</h2>
@@ -30,11 +36,11 @@ const Posts = ({posts, setPosts}) => {
       </div>)
 
     }
-    
-    
-    </>
-   
-      
+
+
+  </>
+
+
 }
 
 export default Posts

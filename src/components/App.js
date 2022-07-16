@@ -28,11 +28,11 @@ const App = () => {
         </nav>
         <Route exact path="/"><div>hello</div></Route>
         <Route path="/posts">
-            <Posts posts={posts} setPosts={setPosts}/>
+            <Posts posts={posts} setPosts={setPosts} user={user} token={token} featuredPost={featuredPost} setFeaturedPost={setFeaturedPost}/>
         </Route>
         <Route path="/account">
-            <Account />
-            </Route>
+            <Account user={user} token={token} setUser={setUser} setToken={setToken}/>
+</Route> 
         
         <Route path="/logout"><div>logout</div></Route>
 
