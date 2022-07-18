@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import {fetchPosts} from "../utility/api";
+import {FeaturedPost} from "./FeaturedPost";
 
 
 //look up promises
@@ -8,7 +9,7 @@ fetch(strangerThingsAPI_URL)
 .then(response => response.json())
 .then(data => {console.log(data)})
 */
-
+//this is the authenticated view
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -32,7 +33,7 @@ const Posts = () => {
   <h1>Posts</h1>
   <ul>
   {
-    posts.map(post => <li onClick="FeaturedPost" className="post" key={post._id}>
+    posts.map(post => <li onClick={(setFeaturedPost)} className="post" key={post._id}>
       <h2>{post.title}</h2>
       <p>{post.description}</p>
       </li>

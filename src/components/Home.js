@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-
+//this is the un-authenticated view look at posts and search(if there was a search bar)
 
 const Home = () => {
     const [posts, setPosts] = useState([]);

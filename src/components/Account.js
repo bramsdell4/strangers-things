@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-
+//account hub would also go here if logged in(probably more ambitious than i think)
 
 const Account = ({token, setToken}) => {
     const [user, setUser] = useState('')
@@ -33,6 +33,7 @@ const Account = ({token, setToken}) => {
       return data
     }
     */
+   //how do i get the user?!?!?
     const registerCall = async (username, password) => {
     const response = await fetch('https://strangers-things.herokuapp.com/api/2204-FTB-MT-WEB-PT/users/register', {
       method: "POST",
@@ -47,10 +48,13 @@ const Account = ({token, setToken}) => {
       })
     })
     const data = await response.json();
+    token === data.data.token;
+    console.log('token', token)
     console.log(data);
      console.log('data?', data.data);
      console.log(data.data.token);
     console.log(response.body.user);
+    console.log('user', user)
      setUser(response.user);
      console.log('user?', response.user);
      
