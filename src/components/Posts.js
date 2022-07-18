@@ -32,7 +32,7 @@ const Posts = () => {
   <h1>Posts</h1>
   <ul>
   {
-    posts.map(post => <li className="post" key={post._id}>
+    posts.map(post => <li onClick="FeaturedPost" className="post" key={post._id}>
       <h2>{post.title}</h2>
       <p>{post.description}</p>
       </li>

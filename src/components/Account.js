@@ -47,11 +47,14 @@ const Account = ({token, setToken}) => {
       })
     })
     const data = await response.json();
-     console.log('data?', data);
+    console.log(data);
+     console.log('data?', data.data);
      console.log(data.data.token);
-     setToken(data.data.token);
-     const regToken = data.data.token
-     return regToken;
+    console.log(response.body.user);
+     setUser(response.user);
+     console.log('user?', response.user);
+     
+     return  setToken(data.data.token);
      
      
     }

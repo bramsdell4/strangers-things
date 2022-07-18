@@ -31,6 +31,12 @@ const App = () => {
             <Home posts={posts} setPosts={setPosts}/>
         </Route>
         <Route path="/posts">
+            <Route path="/posts/:postId">
+                {user && token && featuredPost &&
+                <FeaturedPost user={user} token={token} posts={posts} setPosts={setPosts} featuredPost={featuredPost} setFeaturedPost={setFeaturedPost}
+                />
+}
+            </Route>
             <Posts posts={posts} setPosts={setPosts} user={user} token={token} featuredPost={featuredPost} setFeaturedPost={setFeaturedPost}/>
         </Route>
         <Route path="/account">
